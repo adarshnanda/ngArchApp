@@ -1,9 +1,9 @@
 # ngArchApp
+One time activity:
+run npm install after cloning
 
-for running test cases: grunt test
+for running test cases: 
+grunt test
 
 for running code:
-npm install http-server (one time)
 grunt serve
-cd .tmp
-http-server -cl

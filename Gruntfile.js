@@ -7,7 +7,8 @@ module.exports = function (grunt) {
 		'grunt-injector',
 		'grunt-contrib-copy',
 		'grunt-contrib-concat',
-		'grunt-karma'
+		'grunt-karma',
+		'grunt-http-server'
 		];
 
 
@@ -17,7 +18,8 @@ module.exports = function (grunt) {
 		'copy',
 		'ngtemplates',
 		'concat',
-		'injector'
+		'injector',
+		'http-server'
 		];
 
 	//inject scripts
@@ -29,6 +31,25 @@ module.exports = function (grunt) {
 	};
 	var configJson = {
 		pkg: grunt.file.readJSON('package.json'),
+		'http-server': {
+ 
+        'dev': { 
+            root: '.tmp',
+            port: 9000,
+            host: "0.0.0.0",
+            showDir : true,
+            autoIndex: true,
+ 
+            // server default file extension
+            ext: "html",
+ 
+            // run in parallel with other tasks
+            runInBackground: false, 
+            // Tell grunt task to open the browser
+            openBrowser : true
+        }
+ 
+    },
 		karma:{
 			unit:{
 			    configFile: 'test/karma.conf.js',
