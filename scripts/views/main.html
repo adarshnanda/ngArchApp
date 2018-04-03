@@ -27,10 +27,27 @@
 <button ng-click="main.createRow()">Create New Row</button>
 
 <div ng-if="main.showCreate">
-  Company Name : <input type="text" ng-model="main.name" />
-  Target : <input type="text" ng-model="main.target" />
-  Status : <select ng-model="main.status"><option ng-repeat="status in main.statusList" ng-value="status.name">{{::status.name}}</option></select>
-  <button ng-click="main.addRow()">Add</button>
+  <form name="addRow">
+  <table calss="table">
+    <tr>
+      <td>Company Name :</td>
+      <td><input type="text" ng-model="main.name" required /></td>
+    </tr>
+    <tr>
+      <td>Target :</td>
+      <td><input type="text" ng-model="main.target" required /></td>
+    </tr>
+    <tr>
+      <td>Status :</td>
+      <td>
+        <select ng-model="main.status">
+          <option ng-repeat="status in main.statusList" ng-value="status.name">{{::status.name}}</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+</form>
+<button ng-click="main.addRow()" ng-disabled="!addRow.$valid">Add</button>
 </div> 
 
 </div>

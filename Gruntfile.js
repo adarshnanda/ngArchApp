@@ -80,10 +80,6 @@ module.exports = function (grunt) {
 				src:'scripts/**/*.js',
 				dest:'.tmp/'
 			},
-			externalJs:{
-				src:'ExternalDependecies/dependencies/*.js',
-				dest:'.tmp/'
-			},
 			bower:{
 				src:'bower_components/**/*.js',
 				dest:'.tmp/'
