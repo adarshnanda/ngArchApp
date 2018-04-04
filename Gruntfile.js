@@ -8,7 +8,8 @@ module.exports = function (grunt) {
 		'grunt-contrib-copy',
 		'grunt-contrib-concat',
 		'grunt-karma',
-		'grunt-http-server'
+		'grunt-http-server',
+		'grunt-contrib-less'
 		];
 
 
@@ -16,6 +17,7 @@ module.exports = function (grunt) {
 	var serve = [
 		'clean',
 		'copy',
+		'less',
 		'ngtemplates',
 		'concat',
 		'injector',
@@ -128,7 +130,22 @@ module.exports = function (grunt) {
 			      '.tmp/index.html': ['.tmp/concat/**/*.js']
 			    }
   			}
+  		},
+  		less: {
+		  development: {
+		  	options:{
+		  		paths:['styles/'],
+		  		cleancss: true
+		  	},
+		  	files : [ {
+      			expand : true,
+      			cwd : "./styles",
+      			src: "**/*.less",
+      			dest : "./.tmp/styles",
+      			ext : ".css"
+    		} ]
   		}
+	}
 	};
 
 	
